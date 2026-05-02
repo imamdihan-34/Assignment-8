@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "Deshi Shahi Cow",
+    "type": "Cow",
+    "breed": "Local Deshi",
+    "price": 120000,
+    "weight": 280,
+    "age": 3,
+    "location": "Bogura",
+    "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural grass and খাবার.",
+    "image": "https://i.postimg.cc/4d8J3L7b/cow1.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 2,
+    "name": "Australian Friesian Cow",
+    "type": "Cow",
+    "breed": "Friesian",
+    "price": 180000,
+    "weight": 350,
+    "age": 4,
+    "location": "Sirajganj",
+    "description": "High-quality Friesian cow with strong body structure. ভালোভাবে পালন করা হয়েছে।",
+    "image": "https://i.postimg.cc/2yY7wW3t/cow2.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 3,
+    "name": "Sahiwal Premium Cow",
+    "type": "Cow",
+    "breed": "Sahiwal",
+    "price": 150000,
+    "weight": 300,
+    "age": 3.5,
+    "location": "Rajshahi",
+    "description": "Sahiwal breed cow, খুবই স্বাস্থ্যবান এবং কোরবানির জন্য উপযুক্ত।",
+    "image": "https://i.postimg.cc/T3sQb8FQ/cow3.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 4,
+    "name": "Black Bengal Goat",
+    "type": "Goat",
+    "breed": "Black Bengal",
+    "price": 25000,
+    "weight": 35,
+    "age": 1.5,
+    "location": "Kushtia",
+    "description": "বাংলাদেশের জনপ্রিয় Black Bengal ছাগল, সুস্থ ও ভালোভাবে লালন করা হয়েছে।",
+    "image": "https://i.postimg.cc/Jz3L7m0H/goat1.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 5,
+    "name": "Jamunapari Goat",
+    "type": "Goat",
+    "breed": "Jamunapari",
+    "price": 40000,
+    "weight": 45,
+    "age": 2,
+    "location": "Dhaka",
+    "description": "Jamunapari breed goat, বড় সাইজের এবং premium quality।",
+    "image": "https://i.postimg.cc/N0h6z2ZT/goat2.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 6,
+    "name": "Hybrid White Goat",
+    "type": "Goat",
+    "breed": "Hybrid",
+    "price": 30000,
+    "weight": 38,
+    "age": 1.8,
+    "location": "Chattogram",
+    "description": "Hybrid white goat, দেখতে সুন্দর এবং স্বাস্থ্য ভালো। কোরবানির জন্য ভালো choice।",
+    "image": "https://i.postimg.cc/13Qx2X5k/goat3.jpg",
+    "category": "Small Animal"
+  }
+]
