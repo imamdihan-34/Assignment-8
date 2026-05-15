@@ -45,7 +45,7 @@ export default function Register() {
           <p className="auth-subtitle">Register to explore premium livestock</p>
         </div>
 
-        {/* FORM */}
+    
 
         <form onSubmit={handleRegister} className="auth-form">
           <input
@@ -84,11 +84,10 @@ export default function Register() {
           </button>
         </form>
 
-        {/* DIVIDER */}
 
         <div className="auth-divider">OR</div>
 
-        {/* GOOGLE */}
+      
 
         <button
           onClick={() => googleLogin().then(() => router.push("/"))}

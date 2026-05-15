@@ -6,7 +6,6 @@ QurbaniHat is a modern livestock booking platform where users can browse, view d
 
 ## Live URL
 
-https://your-live-site-link.com
 
 ## Key Features
 
