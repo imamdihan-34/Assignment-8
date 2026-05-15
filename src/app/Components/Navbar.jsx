@@ -38,7 +38,7 @@ export default function Navbar() {
           height: "72px",
         }}
       >
-        {/* Logo */}
+     
         <Link
           href="/"
           style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}
@@ -69,7 +69,6 @@ export default function Navbar() {
           </div>
         </Link>
  
-        {/* Desktop Nav */}
         <div
           style={{ display: "flex", alignItems: "center", gap: "2rem" }}
           className="hidden md:flex"
@@ -79,7 +78,7 @@ export default function Navbar() {
           {user && <NavLink href="/my-profile">My Profile</NavLink>}
         </div>
  
-        {/* Auth Buttons */}
+      
         <div
           style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
           className="hidden md:flex"
@@ -153,7 +152,7 @@ export default function Navbar() {
           )}
         </div>
  
-        {/* Mobile Hamburger */}
+
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           style={{

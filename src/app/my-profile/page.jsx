@@ -6,18 +6,18 @@ import { useAuth } from "@/app/context/AuthContext";
 import PrivateRoute from "@/app/components/PrivateRoute";
 import { FaUser, FaEnvelope, FaEdit, FaShieldAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
- 
+
 function ProfileContent() {
   const { user, logout } = useAuth();
   const router = useRouter();
   const [imgError, setImgError] = useState(false);
- 
+
   const handleLogout = async () => {
     await logout();
     toast.success("Logged out successfully");
     router.push("/");
   };
- 
+
   return (
     <div style={{ minHeight: "100vh", background: "var(--cream)" }}>
       {/* Header */}
@@ -28,10 +28,12 @@ function ProfileContent() {
           textAlign: "center",
         }}
       >
-        <h1 style={{ color: "#fdf6e3", fontSize: "2rem", fontWeight: "800" }}>My Profile</h1>
+        <h1 style={{ color: "#fdf6e3", fontSize: "2rem", fontWeight: "800" }}>
+          My Profile
+        </h1>
         <p style={{ color: "#a8c5b5" }}>Manage your QurbaniMart account</p>
       </div>
- 
+
       <div
         style={{
           maxWidth: "640px",
@@ -94,19 +96,39 @@ function ProfileContent() {
                 {(user.displayName || user.email || "U")[0].toUpperCase()}
               </div>
             )}
-            <h2 style={{ color: "#fdf6e3", fontSize: "1.3rem", fontWeight: "700" }}>
+            <h2
+              style={{
+                color: "#fdf6e3",
+                fontSize: "1.3rem",
+                fontWeight: "700",
+              }}
+            >
               {user.displayName || "User"}
             </h2>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginTop: "0.4rem" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                marginTop: "0.4rem",
+              }}
+            >
               <FaShieldAlt style={{ color: "#c9972a", fontSize: "0.8rem" }} />
-              <span style={{ color: "#a8c5b5", fontSize: "0.82rem" }}>Verified Member</span>
+              <span style={{ color: "#a8c5b5", fontSize: "0.82rem" }}>
+                Verified Member
+              </span>
             </div>
           </div>
- 
-          {/* Info Section */}
+
           <div style={{ padding: "2rem" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "2rem" }}>
-              {/* Name */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+                marginBottom: "2rem",
+              }}
+            >
               <div
                 style={{
                   display: "flex",
@@ -132,7 +154,13 @@ function ProfileContent() {
                   <FaUser style={{ color: "#2d7a4f" }} />
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.78rem", color: "#8a8a8a", marginBottom: "0.1rem" }}>
+                  <div
+                    style={{
+                      fontSize: "0.78rem",
+                      color: "#8a8a8a",
+                      marginBottom: "0.1rem",
+                    }}
+                  >
                     Full Name
                   </div>
                   <div style={{ fontWeight: "600", color: "#1a4a2e" }}>
@@ -140,7 +168,7 @@ function ProfileContent() {
                   </div>
                 </div>
               </div>
- 
+
               {/* Email */}
               <div
                 style={{
@@ -167,14 +195,22 @@ function ProfileContent() {
                   <FaEnvelope style={{ color: "#2d7a4f" }} />
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.78rem", color: "#8a8a8a", marginBottom: "0.1rem" }}>
+                  <div
+                    style={{
+                      fontSize: "0.78rem",
+                      color: "#8a8a8a",
+                      marginBottom: "0.1rem",
+                    }}
+                  >
                     Email Address
                   </div>
-                  <div style={{ fontWeight: "600", color: "#1a4a2e" }}>{user.email}</div>
+                  <div style={{ fontWeight: "600", color: "#1a4a2e" }}>
+                    {user.email}
+                  </div>
                 </div>
               </div>
             </div>
- 
+
             {/* Buttons */}
             <div style={{ display: "flex", gap: "0.75rem" }}>
               <Link
@@ -229,7 +265,7 @@ function ProfileContent() {
     </div>
   );
 }
- 
+
 export default function MyProfilePage() {
   return (
     <PrivateRoute>

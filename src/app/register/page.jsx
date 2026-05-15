@@ -37,8 +37,6 @@ export default function Register() {
   return (
     <section className="auth-section">
       <div className="auth-card">
-        {/* TOP */}
-
         <div>
           <span className="badge badge-gold mb-5">Join QurbaniMart</span>
 
@@ -50,8 +48,6 @@ export default function Register() {
         {/* FORM */}
 
         <form onSubmit={handleRegister} className="auth-form">
-          {/* NAME */}
-
           <input
             type="text"
             name="name"
@@ -59,8 +55,6 @@ export default function Register() {
             className="auth-input"
             required
           />
-
-          {/* EMAIL */}
 
           <input
             type="email"
@@ -70,16 +64,12 @@ export default function Register() {
             required
           />
 
-          {/* PHOTO URL */}
-
           <input
             type="text"
             name="photoURL"
             placeholder="Profile photo URL"
             className="auth-input"
           />
-
-          {/* PASSWORD */}
 
           <input
             type="password"
@@ -88,8 +78,6 @@ export default function Register() {
             className="auth-input"
             required
           />
-
-          {/* BUTTON */}
 
           <button type="submit" className="btn-primary auth-btn">
             Register

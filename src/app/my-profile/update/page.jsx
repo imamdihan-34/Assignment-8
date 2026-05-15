@@ -1,5 +1,3 @@
-
-
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -8,19 +6,18 @@ import { useAuth } from "@/app/context/AuthContext";
 import PrivateRoute from "@/app/components/PrivateRoute";
 import toast from "react-hot-toast";
 import { FaArrowLeft, FaCamera } from "react-icons/fa";
- 
+
 function UpdateContent() {
   const { user, updateUserProfile } = useAuth();
   const router = useRouter();
   const [form, setForm] = useState({ name: "", photoURL: "" });
   const [saving, setSaving] = useState(false);
- 
+
   useEffect(() => {
     if (user) {
-   
     }
   }, [user]);
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSaving(true);
@@ -34,7 +31,7 @@ function UpdateContent() {
       setSaving(false);
     }
   };
- 
+
   return (
     <div
       style={{
@@ -47,7 +44,6 @@ function UpdateContent() {
       }}
     >
       <div style={{ width: "100%", maxWidth: "420px" }}>
-        {/* Back Link */}
         <Link
           href="/my-profile"
           style={{
@@ -62,7 +58,7 @@ function UpdateContent() {
         >
           <FaArrowLeft /> Back to Profile
         </Link>
- 
+
         <div
           style={{
             background: "white",
@@ -71,7 +67,6 @@ function UpdateContent() {
             boxShadow: "0 20px 60px rgba(0,0,0,0.25)",
           }}
         >
-          {/* Header */}
           <div style={{ textAlign: "center", marginBottom: "1.75rem" }}>
             {form.photoURL ? (
               <img
@@ -105,20 +100,24 @@ function UpdateContent() {
                 <FaCamera style={{ color: "white", fontSize: "1.5rem" }} />
               </div>
             )}
-            <h2 style={{ color: "#1a4a2e", fontSize: "1.3rem", fontWeight: "700" }}>
+            <h2
+              style={{
+                color: "#1a4a2e",
+                fontSize: "1.3rem",
+                fontWeight: "700",
+              }}
+            >
               Update Information
             </h2>
             <p style={{ color: "#8a8a8a", fontSize: "0.85rem" }}>
               Update your name and profile photo
             </p>
           </div>
- 
-          {/* Form */}
+
           <form
             onSubmit={handleSubmit}
             style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}
           >
-            {/* Name */}
             <div>
               <label
                 style={{
@@ -140,8 +139,7 @@ function UpdateContent() {
                 required
               />
             </div>
- 
-            {/* Photo URL */}
+
             <div>
               <label
                 style={{
@@ -161,12 +159,17 @@ function UpdateContent() {
                 value={form.photoURL}
                 onChange={(e) => setForm({ ...form, photoURL: e.target.value })}
               />
-              <p style={{ color: "#8a8a8a", fontSize: "0.78rem", marginTop: "0.3rem" }}>
+              <p
+                style={{
+                  color: "#8a8a8a",
+                  fontSize: "0.78rem",
+                  marginTop: "0.3rem",
+                }}
+              >
                 Paste a direct image URL for your profile photo
               </p>
             </div>
- 
-            {/* Submit */}
+
             <button
               type="submit"
               className="btn-gold"
@@ -187,7 +190,7 @@ function UpdateContent() {
     </div>
   );
 }
- 
+
 export default function UpdateProfilePage() {
   return (
     <PrivateRoute>
