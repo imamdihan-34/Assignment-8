@@ -1,56 +1,120 @@
 "use client";
-import { useAuth } from "../context/AuthContext";
+
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { useAuth } from "../context/AuthContext";
 
 export default function Register() {
-  const { registerUser, updateUser, googleSignIn } = useAuth();
+  const { register, googleLogin } = useAuth();
+
   const router = useRouter();
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
     const form = e.target;
+
     const name = form.name.value;
+
     const email = form.email.value;
-    const photo = form.photo.value;
+
+    const photoURL = form.photoURL.value;
+
     const password = form.password.value;
 
     try {
-      await registerUser(email, password);
-      await updateUser(name, photo);
-      toast.success("Account created successfully!");
+      await register(name, email, photoURL, password);
+
+      toast.success("Account Created Successfully!");
+
       router.push("/");
-    } catch (err) {
-      toast.error(err.message);
+    } catch (error) {
+      toast.error(error.message);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-200">
-      <div className="card w-full max-w-sm shadow-2xl bg-base-100">
-        <form onSubmit={handleRegister} className="card-body">
-          <h2 className="text-2xl font-bold text-center">Create Account</h2>
-          <div className="form-control">
-            <label className="label">Name:</label>
-            <input name="name" type="text" placeholder="Name" className="input input-bordered" required />
-          </div>
-          <div className="form-control">
-            <label className="label">Email</label>
-            <input name="email" type="email" placeholder="Mail" className="input input-bordered" required />
-          </div>
-          <div className="form-control">
-            <label className="label">Photo URL</label>
-            <input name="photo" type="text" placeholder="https://..." className="input input-bordered" required />
-          </div>
-          <div className="form-control">
-            <label className="label">Password</label>
-            <input name="password" type="password" placeholder="12345" className="input input-bordered" required />
-          </div>
-          <button className="btn btn-primary mt-4">Register</button>
-          <div className="divider">OR</div>
-          <button type="button" onClick={() => googleSignIn().then(() => router.push("/"))} className="btn btn-outline">Google Login</button>
+    <section className="auth-section">
+      <div className="auth-card">
+        {/* TOP */}
+
+        <div>
+          <span className="badge badge-gold mb-5">Join QurbaniMart</span>
+
+          <h1 className="auth-title">Create Account</h1>
+
+          <p className="auth-subtitle">Register to explore premium livestock</p>
+        </div>
+
+        {/* FORM */}
+
+        <form onSubmit={handleRegister} className="auth-form">
+          {/* NAME */}
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+            className="auth-input"
+            required
+          />
+
+          {/* EMAIL */}
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            className="auth-input"
+            required
+          />
+
+          {/* PHOTO URL */}
+
+          <input
+            type="text"
+            name="photoURL"
+            placeholder="Profile photo URL"
+            className="auth-input"
+          />
+
+          {/* PASSWORD */}
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Create password"
+            className="auth-input"
+            required
+          />
+
+          {/* BUTTON */}
+
+          <button type="submit" className="btn-primary auth-btn">
+            Register
+          </button>
         </form>
+
+        {/* DIVIDER */}
+
+        <div className="auth-divider">OR</div>
+
+        {/* GOOGLE */}
+
+        <button
+          onClick={() => googleLogin().then(() => router.push("/"))}
+          className="google-btn"
+        >
+          Continue with Google
+        </button>
+
+        {/* FOOTER */}
+
+        <div className="auth-footer">
+          Already have an account? <Link href="/login">Login</Link>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

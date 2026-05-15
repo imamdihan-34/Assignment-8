@@ -42,13 +42,12 @@ export default function AnimalDetails() {
             alignItems: "center",
           }}
         >
-          {/* IMAGE */}
 
           <div className="custom-card">
             <img src={animal.image} alt={animal.name} />
           </div>
 
-          {/* DETAILS */}
+
 
           <div>
             <span className="badge badge-gold mb-5">Premium Livestock</span>
