@@ -1,7 +1,5 @@
 "use client";
-
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "@/lib/firebase";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -11,50 +9,58 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
-
-const AuthContext = createContext();
-
-export const AuthProvider = ({ children }) => {
+import { auth } from "@/app/lib/firebase";
+ 
+const AuthContext = createContext(null);
+ 
+export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+ 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (current) => {
-      setUser(current);
+    const unsub = onAuthStateChanged(auth, (u) => {
+      setUser(u);
       setLoading(false);
     });
-    return () => unsub();
+    return unsub;
   }, []);
-
-  const login = (email, pass) =>
-    signInWithEmailAndPassword(auth, email, pass);
-
-  const register = async (email, pass, name, photo) => {
-    const res = await createUserWithEmailAndPassword(auth, email, pass);
-    await updateProfile(res.user, {
-      displayName: name,
-      photoURL: photo,
-    });
+ 
+  const login = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
   };
-
-  const logout = () => signOut(auth);
-
-  const googleLogin = () =>
-    signInWithPopup(auth, new GoogleAuthProvider());
-
-  const updateUser = (name, photo) =>
-    updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photo,
-    });
-
+ 
+  const register = async (name, email, photoURL, password) => {
+    const cred = await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(cred.user, { displayName: name, photoURL });
+    setUser({ ...cred.user, displayName: name, photoURL });
+  };
+ 
+  const logout = async () => {
+    await signOut(auth);
+  };
+ 
+  const googleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider);
+  };
+ 
+  const updateUserProfile = async (name, photoURL) => {
+    if (!auth.currentUser) throw new Error("No user");
+    await updateProfile(auth.currentUser, { displayName: name, photoURL });
+    setUser({ ...auth.currentUser, displayName: name, photoURL });
+  };
+ 
   return (
     <AuthContext.Provider
-      value={{ user, loading, login, register, logout, googleLogin, updateUser }}
+      value={{ user, loading, login, register, logout, googleLogin, updateUserProfile }}
     >
       {children}
     </AuthContext.Provider>
   );
-};
-
-export const useAuth = () => useContext(AuthContext);
+}
+ 
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be used within AuthProvider");
+  return ctx;
+}
