@@ -5,7 +5,7 @@
 QurbaniHat is a modern livestock booking platform where users can browse, view details, and book cows, goats, and other farm animals online for Qurbani purposes. The platform provides a responsive UI, authentication system, dynamic animal details pages, and smooth user experience.
 
 ## Live URL
-
+https://qurbani-online.netlify.app/
 
 ## Key Features
 
