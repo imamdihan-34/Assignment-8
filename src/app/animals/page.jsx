@@ -17,11 +17,14 @@ export default function AllAnimalsPage() {
     <div className="container mx-auto p-6">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-bold">Available Animals</h2>
+        
         <select 
           className="select select-bordered w-full max-w-xs" 
+          defaultValue="default" 
           onChange={(e) => handleSort(e.target.value)}
         >
-          <option disabled selected>Sort by Price</option>
+         
+          <option value="default" disabled>Sort by Price</option>
           <option value="asc">Low to High</option>
           <option value="desc">High to Low</option>
         </select>
