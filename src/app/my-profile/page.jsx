@@ -52,7 +52,7 @@ function ProfileContent() {
             overflow: "hidden",
           }}
         >
-          {/* Avatar Section */}
+    
           <div
             style={{
               background: "linear-gradient(135deg, #1a4a2e, #2d7a4f)",
@@ -169,7 +169,7 @@ function ProfileContent() {
                 </div>
               </div>
 
-              {/* Email */}
+        
               <div
                 style={{
                   display: "flex",
@@ -211,7 +211,7 @@ function ProfileContent() {
               </div>
             </div>
 
-            {/* Buttons */}
+     
             <div style={{ display: "flex", gap: "0.75rem" }}>
               <Link
                 href="/my-profile/update"

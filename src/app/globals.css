@@ -23,7 +23,7 @@
   --transition: all 0.3s ease;
 }
 
-/* RESET */
+
 * {
   margin: 0;
   padding: 0;
@@ -42,37 +42,34 @@ body {
   line-height: 1.6;
 }
 
-/* CONTAINER */
 .container {
   width: 90%;
   max-width: 1240px;
   margin: auto;
 }
 
-/* SECTION */
 section {
   padding: 90px 0;
 }
 
-/* IMAGE */
+
 img {
   width: 100%;
   display: block;
   object-fit: cover;
 }
 
-/* LINKS */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* LIST */
+
 ul {
   list-style: none;
 }
 
-/* BUTTON */
+
 button {
   border: none;
   outline: none;
@@ -80,7 +77,7 @@ button {
   font-family: inherit;
 }
 
-/* SCROLLBAR */
+
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -94,7 +91,7 @@ button {
   border-radius: 999px;
 }
 
-/* SECTION TITLE */
+
 .section-title {
   font-size: 3rem;
   font-weight: 700;
@@ -103,7 +100,6 @@ button {
   margin-bottom: 14px;
 }
 
-/* SUBTITLE */
 .section-subtitle {
   text-align: center;
   color: var(--text-mid);
@@ -112,7 +108,7 @@ button {
   font-size: 1.05rem;
 }
 
-/* GOLD DIVIDER */
+
 .divider-gold {
   width: 80px;
   height: 4px;
@@ -121,7 +117,7 @@ button {
   background: linear-gradient(90deg, var(--gold), var(--gold-light));
 }
 
-/* BUTTON PRIMARY */
+
 .btn-primary {
   background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
 
@@ -140,7 +136,6 @@ button {
   box-shadow: var(--shadow);
 }
 
-/* BUTTON OUTLINE */
 .btn-outline {
   background: transparent;
   border: 2px solid white;
@@ -162,7 +157,6 @@ button {
   color: var(--green-deep);
 }
 
-/* BADGE */
 .badge {
   display: inline-block;
   padding: 0.35rem 0.9rem;
@@ -179,7 +173,7 @@ button {
   backdrop-filter: blur(10px);
 }
 
-/* GRID */
+
 .animal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -187,7 +181,7 @@ button {
   margin-top: 40px;
 }
 
-/* CARD */
+
 .custom-card {
   background: white;
   border-radius: var(--radius);
@@ -208,14 +202,14 @@ button {
   box-shadow: var(--shadow-gold);
 }
 
-/* CARD IMAGE */
+
 .custom-card img {
   width: 100%;
   height: 260px;
   object-fit: cover;
 }
 
-/* CARD CONTENT */
+
 .card-content {
   padding: 24px;
 
@@ -229,28 +223,26 @@ button {
   gap: 20px;
 }
 
-/* CARD TITLE */
+
 .card-title-custom {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--green-deep);
 }
 
-/* PRICE */
+
 .price {
   color: var(--gold);
   font-size: 1.3rem;
   font-weight: 700;
 }
 
-/* BUTTON FULL */
 .btn-full {
   width: 100%;
   text-align: center;
 }
 
-/* FORM */
-/* AUTH SECTION */
+
 .auth-section {
   min-height: 100vh;
   display: flex;
@@ -263,7 +255,7 @@ button {
   background-size: cover;
   background-position: center;
 }
-/* AUTH CARD */
+
 .auth-card {
   width: 100%;
   max-width: 480px;
@@ -282,19 +274,19 @@ button {
   text-align: center;
   margin-bottom: 10px;
 }
-/* AUTH SUBTITLE */
+
 .auth-subtitle {
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 35px;
 }
-/* AUTH FORM */
+
 .auth-form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-/* AUTH INPUT */
+
 .auth-input {
   width: 100%;
   padding: 15px 18px;
@@ -317,7 +309,7 @@ button {
   width: 100%;
   text-align: center;
 }
-/* AUTH FOOTER */
+
 .auth-footer {
   margin-top: 24px;
   text-align: center;
@@ -327,7 +319,7 @@ button {
   color: var(--gold-light);
   font-weight: 600;
 }
-/* DIVIDER */
+
 .auth-divider {
   display: flex;
   align-items: center;
@@ -342,7 +334,7 @@ button {
   height: 1px;
   background: rgba(255, 255, 255, 0.2);
 }
-/* GOOGLE BUTTON */
+
 .google-btn {
   width: 100%;
   background: white;
@@ -356,7 +348,7 @@ button {
   transform: translateY(-2px);
 }
 
-/* SPINNER */
+
 .spinner {
   width: 40px;
   height: 40px;
@@ -375,7 +367,7 @@ button {
   }
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   section {
     padding: 70px 0;

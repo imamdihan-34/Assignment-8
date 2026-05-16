@@ -8,8 +8,6 @@ export default function Home() {
 
   return (
     <main>
-      {/* HERO SECTION */}
-
       <section
         className="relative overflow-hidden"
         style={{
@@ -19,8 +17,6 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        {/* DARK OVERLAY */}
-
         <div
           className="absolute inset-0"
           style={{
@@ -28,8 +24,6 @@ export default function Home() {
               "linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.35))",
           }}
         ></div>
-
-        {/* HERO CONTENT */}
 
         <div className="container relative z-10 min-h-screen flex items-center">
           <div className="max-w-2xl text-white">
@@ -73,8 +67,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED ANIMALS */}
-
       <section>
         <div className="container">
           <div className="text-center">
@@ -106,8 +98,6 @@ export default function Home() {
                     }}
                   />
 
-                  {/* BADGE */}
-
                   <span
                     className="badge badge-gold"
                     style={{
@@ -119,8 +109,6 @@ export default function Home() {
                     Premium
                   </span>
                 </div>
-
-                {/* CONTENT */}
 
                 <div className="card-content">
                   <div>
@@ -147,7 +135,7 @@ export default function Home() {
                   </div>
 
                   <Link
-                  href={`/animals/${item.id}`}
+                    href={`/animals/${item.id}`}
                     className="btn-primary btn-full"
                   >
                     View Details
@@ -158,8 +146,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* WHY CHOOSE US */}
 
       <section>
         <div className="container">
@@ -198,8 +184,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* FEATURES */}
-
             <div
               className="grid"
               style={{
@@ -208,7 +192,7 @@ export default function Home() {
                 marginTop: "60px",
               }}
             >
-              {/* BOX 1 */}
+
 
               <div
                 style={{
@@ -237,8 +221,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* BOX 2 */}
-
               <div
                 style={{
                   background: "rgba(255,255,255,0.08)",
@@ -265,8 +247,6 @@ export default function Home() {
                   Quick and secure delivery directly to your location.
                 </p>
               </div>
-
-              {/* BOX 3 */}
 
               <div
                 style={{

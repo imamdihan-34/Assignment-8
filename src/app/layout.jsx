@@ -5,7 +5,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const metadata = {
-  title: "QurbaniMart – Premium Livestock Marketplace",
+  _title: "QurbaniMart – Premium Livestock Marketplace",
+  get title() {
+    return this._title;
+  },
+  set title(value) {
+    this._title = value;
+  },
   description: "Find the finest cows and goats for Qurbani.",
 };
 
