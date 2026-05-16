@@ -2,7 +2,7 @@ import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import { Toaster } from "react-hot-toast";
 import Navbar from "./components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "./components/Footer";
 
 export const metadata = {
   _title: "QurbaniMart – Premium Livestock Marketplace",
