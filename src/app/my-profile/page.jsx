@@ -2,8 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/app/context/AuthContext";
-import PrivateRoute from "@/app/components/PrivateRoute";
+import { useAuth } from "../context/AuthContext";
+import PrivateRoute from "../components/PrivateRoute";
 import { FaUser, FaEnvelope, FaEdit, FaShieldAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
 

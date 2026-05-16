@@ -9,7 +9,7 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "@/app/lib/firebase";
+import { auth } from "../lib/firebase";
  
 const AuthContext = createContext(null);
  

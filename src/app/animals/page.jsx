@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import animalsData from "../data/animals.json";
-import AnimalCard from "@/app/components/AnimalCard";
+import AnimalCard from "../components/AnimalCard";
 
 export default function AllAnimalsPage() {
   const [animals, setAnimals] = useState(animalsData);
