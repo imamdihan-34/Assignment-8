@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../context/AuthContext";
-import PrivateRoute from "../../components/PrivateRoute";
+import PrivateRoute from "../../../components/PrivateRoute";
 import toast from "react-hot-toast";
 import { FaArrowLeft, FaCamera } from "react-icons/fa";
 
